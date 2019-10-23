@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-linux
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: dotnet-linux
+       name: dotnet-linux
+      namespace: dotnet-linux
+    spec:
+      containers:
+        - name: dotnet-linux
+          image: "liuchaorexliu/aspnetapp:v0.1"
+          imagePullPolicy: Always
+          name: dotnet-linux
+          ports:
+            - containerPort: 80
+              protocol: TCP

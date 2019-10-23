@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: dotnet-linux
+  name: dotnet-linux
+  namespace: dotnet-linux
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    k8s-app: dotnet-linux
